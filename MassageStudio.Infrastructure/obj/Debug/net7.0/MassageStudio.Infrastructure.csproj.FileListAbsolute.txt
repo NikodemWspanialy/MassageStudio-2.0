@@ -1,0 +1,17 @@
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Infrastructure.deps.json
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Infrastructure.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Infrastructure.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.AssemblyInfoInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.AssemblyInfo.cs
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.csproj.CoreCompileInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\refint\MassageStudio.Infrastructure.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\ref\MassageStudio.Infrastructure.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Infrastructure.runtimeconfig.json
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\bin\Debug\net7.0\MassageStudio.Domain.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.csproj.AssemblyReference.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.csproj.CopyComplete
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Infrastructure\obj\Debug\net7.0\MassageStudio.Infrastructure.genruntimeconfig.cache

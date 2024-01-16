@@ -1,0 +1,3 @@
+ROLE: ADMIN
+email: admin@admin.com	
+password: admin1

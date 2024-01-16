@@ -1,0 +1,11 @@
+﻿@using MassageStudio.Application.ApplicationUser.Queries.UserIsInRoles
+@using MediatR
+@inject IMediator mediator
+@{
+    @if (await mediator.Send(new UserIsInRolesQuery("Admin")))
+    {  
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Type" asp-action="Index">Edycja masaży</a>
+    </li>
+    }
+}

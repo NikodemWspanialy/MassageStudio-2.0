@@ -1,0 +1,15 @@
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\bin\Debug\net7.0\MassageStudio.Application.deps.json
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\bin\Debug\net7.0\MassageStudio.Application.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\bin\Debug\net7.0\MassageStudio.Application.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\bin\Debug\net7.0\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\bin\Debug\net7.0\MassageStudio.Domain.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.csproj.AssemblyReference.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.AssemblyInfoInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.AssemblyInfo.cs
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.csproj.CoreCompileInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.csproj.CopyComplete
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\refint\MassageStudio.Application.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\MassageStudio.Application.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassageStudio.Application\obj\Debug\net7.0\ref\MassageStudio.Application.dll

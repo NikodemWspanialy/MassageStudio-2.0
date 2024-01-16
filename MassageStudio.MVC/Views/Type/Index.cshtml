@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MassageStudio.Application.Types.Dtos.MassageTypeDto>
+
+@{
+    ViewData["Title"] = "Typy masaży";
+    int rowCounter = 1;
+
+    string GetColor()
+    {
+        rowCounter = rowCounter + 1;
+        return rowCounter % 2 == 0 ? "table-primary" : "table-info";
+    }
+
+}
+
+<div class="h1 mx-auto" style="width: 500px;">Lista dostepnych masaży</div>
+@if (ViewData["isEditableTypes"] != null && ViewData["isEditableTypes"].ToString() == "true")
+{
+    <p>
+        <a class="btn btn-outline-primary" asp-action="AddType">Create New</a>
+    </p>
+}
+<table class="table table-hover">
+    <thead>
+        <tr class="table table-sm">
+            <th scope="col">
+                nazwa
+            </th>
+            <th scope="col">
+                opis
+            </th>
+            <th scope="col">
+                czas
+            </th>
+            <th scope="col">
+                cena
+            </th>
+            @if (ViewData["isEditableTypes"] != null && ViewData["isEditableTypes"].ToString() == "true")
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class=@GetColor()>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time) minut
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price) zł
+                </td>
+                @if (ViewData["isEditableTypes"] != null && ViewData["isEditableTypes"].ToString() == "true")
+                {
+
+                    <td>
+                        <a class="btn btn-outline-dark" asp-action="Edit" asp-route-name="@item.Name">edytuj</a>
+                        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-name="@item.Name">Usuń</a>
+
+                    </td>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
