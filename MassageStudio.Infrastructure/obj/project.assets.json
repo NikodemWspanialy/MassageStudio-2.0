@@ -3320,11 +3320,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
+      "projectUniqueName": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
       "projectName": "MassageStudio.Infrastructure",
-      "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
+      "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\nikod\\.nuget\\packages\\",
-      "outputPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\obj\\",
+      "outputPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3346,8 +3346,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassegeStudio.Domain\\MassageStudio.Domain.csproj": {
-              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassegeStudio.Domain\\MassageStudio.Domain.csproj"
+            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassegeStudio.Domain\\MassageStudio.Domain.csproj": {
+              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassegeStudio.Domain\\MassageStudio.Domain.csproj"
             }
           }
         }

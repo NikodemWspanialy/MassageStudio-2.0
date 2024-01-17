@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sLUSZZP4uE7y6Lqnq4dOh+8/iYUHg4TBbuXP/NZI6ANUW/jBMdwTzXl6+PA0F5BC/9rYUaLZULpB3FboZMyiSg==",
+  "dgSpecHash": "dUAp4Zjjn8ql0/7Fq5sFm24/OOeWIJSul7KHPTrKwpgOqypUW77R9fPSWqT6ERx+kvxWSyC00GVSTjaSFqPc5g==",
   "success": true,
-  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Application\\MassageStudio.Application.csproj",
+  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Application\\MassageStudio.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikod\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nikod\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

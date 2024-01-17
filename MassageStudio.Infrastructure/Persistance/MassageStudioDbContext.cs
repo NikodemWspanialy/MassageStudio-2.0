@@ -11,6 +11,7 @@ namespace MassageStudio.Infrastructure.Persistance
 {
     public class MassageStudioDbContext : IdentityDbContext
     {
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Domain.Entities.Massage> Massages { get; set; }
         public DbSet<Domain.Entities.Type> MassageTypes { get; set; }
 

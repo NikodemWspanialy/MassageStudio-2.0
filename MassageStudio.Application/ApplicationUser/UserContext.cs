@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,8 +36,8 @@ namespace MassageStudio.Application.ApplicationUser
             var id = user.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
             var email = user.FindFirst(x => x.Type == ClaimTypes.Email)!.Value;
             var roles = user.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToArray();
-            var role = user.FindFirst(c => c.Type == ClaimTypes.Role)?.Value;
-            return new CurrentUser(id, email, roles);
+            var name = user.FindFirst(x => x.Type == ClaimTypes.Name)!.Value;
+            return new CurrentUser(id, email, name, roles);
         }
     }
 }

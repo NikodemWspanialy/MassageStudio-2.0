@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9yOnrhTS0+LO1o9xk6OPvxjUCIG3xq4rW+PCwxVmQoJQ3mf8SJsnXieJKj6ytIcAYh4wrKn6MinYLQg7n/kMBg==",
+  "dgSpecHash": "yLOuxlQNPaSF63nuGG6BPZKq96QYrG0bF9OWcp+Kp8VDPknu1YubnJbHkIu1DBO2rNuR/EeZHSk2DaPM3YY/lA==",
   "success": true,
-  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassegeStudio.Domain\\MassageStudio.Domain.csproj",
+  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassegeStudio.Domain\\MassageStudio.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikod\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.14\\microsoft.aspnetcore.cryptography.internal.7.0.14.nupkg.sha512",
     "C:\\Users\\nikod\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.14\\microsoft.aspnetcore.cryptography.keyderivation.7.0.14.nupkg.sha512",

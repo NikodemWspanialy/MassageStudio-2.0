@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m1L76sgH/GChUEBO2dnfQIegr1UDa+yAsHfKwwpTBzesbxSqKq/9VmYQrkradjdbhT9VW3TrlLEAVzp7nsaY8w==",
+  "dgSpecHash": "GBJBZfsWh/X989lekOZrMVOqEJ6K7ufhCFhz1fZ8QLpRPpuz/jweyAiQKAcEuQqcz56oM/zVGsTYzJ+6jBCwAg==",
   "success": true,
-  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
+  "projectFilePath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikod\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\nikod\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -23,7 +23,7 @@ namespace MassageStudio.Infrastructure.Extensions
             services.AddDbContext<MassageStudioDbContext>(opt => 
             opt.UseSqlServer(configuration.GetConnectionString("MassageStudio"))
             );
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.Stores.MaxLengthForKeys = 450;
                 options.Password.RequireNonAlphanumeric = false;

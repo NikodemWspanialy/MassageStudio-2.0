@@ -10,3 +10,16 @@ C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassegeStudio.Domain\obj\Debug\net7
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassegeStudio.Domain\obj\Debug\net7.0\refint\MassageStudio.Domain.dll
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.pdb
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio\MassegeStudio.Domain\obj\Debug\net7.0\ref\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\bin\Debug\net7.0\MassageStudio.Domain.deps.json
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\bin\Debug\net7.0\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\bin\Debug\net7.0\MassageStudio.Domain.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.csproj.AssemblyReference.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.AssemblyInfoInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.AssemblyInfo.cs
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.csproj.CoreCompileInputs.cache
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.sourcelink.json
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\refint\MassageStudio.Domain.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\MassageStudio.Domain.pdb
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassegeStudio.Domain\obj\Debug\net7.0\ref\MassageStudio.Domain.dll

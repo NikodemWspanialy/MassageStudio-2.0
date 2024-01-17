@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MassageStudio.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class add_name_and_lastname_to_applicationUser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,6 +30,9 @@ namespace MassageStudio.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -51,18 +54,19 @@ namespace MassageStudio.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Type",
+                name: "MassageTypes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Time = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Type", x => x.Id);
+                    table.PrimaryKey("PK_MassageTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,8 +115,8 @@ namespace MassageStudio.Infrastructure.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -156,8 +160,8 @@ namespace MassageStudio.Infrastructure.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -180,8 +184,8 @@ namespace MassageStudio.Infrastructure.Migrations
                     TypeId = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SetupDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MasseurName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MasseurId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    MasseurName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MasseurId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Free = table.Column<bool>(type: "bit", nullable: false),
                     ClientName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClientId = table.Column<string>(type: "nvarchar(450)", nullable: true)
@@ -198,12 +202,11 @@ namespace MassageStudio.Infrastructure.Migrations
                         name: "FK_Massages_AspNetUsers_MasseurId",
                         column: x => x.MasseurId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Massages_Type_TypeId",
+                        name: "FK_Massages_MassageTypes_TypeId",
                         column: x => x.TypeId,
-                        principalTable: "Type",
+                        principalTable: "MassageTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -291,7 +294,7 @@ namespace MassageStudio.Infrastructure.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Type");
+                name: "MassageTypes");
         }
     }
 }

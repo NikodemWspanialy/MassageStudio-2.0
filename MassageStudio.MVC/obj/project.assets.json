@@ -843,6 +843,7 @@
           "Microsoft.AspNetCore.App"
         ],
         "build": {
+          "build/Microsoft.AspNetCore.Identity.UI.props": {},
           "buildTransitive/Microsoft.AspNetCore.Identity.UI.targets": {}
         },
         "buildMultiTargeting": {
@@ -11973,6 +11974,8 @@
       "FluentAssertions >= 6.12.0",
       "MassageStudio.Application >= 1.0.0",
       "MassageStudio.Infrastructure >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.14",
+      "Microsoft.AspNetCore.Identity.UI >= 7.0.14",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.14",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.11"
     ]
@@ -11984,11 +11987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.MVC\\MassageStudio.MVC.csproj",
+      "projectUniqueName": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\MassageStudio.MVC.csproj",
       "projectName": "MassageStudio.MVC",
-      "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.MVC\\MassageStudio.MVC.csproj",
+      "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\MassageStudio.MVC.csproj",
       "packagesPath": "C:\\Users\\nikod\\.nuget\\packages\\",
-      "outputPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.MVC\\obj\\",
+      "outputPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12010,11 +12013,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Application\\MassageStudio.Application.csproj": {
-              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Application\\MassageStudio.Application.csproj"
+            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Application\\MassageStudio.Application.csproj": {
+              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Application\\MassageStudio.Application.csproj"
             },
-            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj": {
-              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj"
+            "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj": {
+              "projectPath": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.Infrastructure\\MassageStudio.Infrastructure.csproj"
             }
           }
         }
@@ -12032,6 +12035,14 @@
           "FluentAssertions": {
             "target": "Package",
             "version": "[6.12.0, )"
+          },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.14, )"
+          },
+          "Microsoft.AspNetCore.Identity.UI": {
+            "target": "Package",
+            "version": "[7.0.14, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

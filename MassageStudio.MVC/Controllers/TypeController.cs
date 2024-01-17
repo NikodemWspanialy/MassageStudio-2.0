@@ -69,7 +69,7 @@ namespace MassageStudio.MVC.Controllers
         }
         public async Task<IActionResult> Delete(string name)
         {
-            if (await mediator.Send(new UserIsInRolesQuery("admin")))
+            if (await mediator.Send(new UserIsInRolesQuery("Admin")))
             {
                 await mediator.Send(new DeleteTypeCommand(name));
             }
