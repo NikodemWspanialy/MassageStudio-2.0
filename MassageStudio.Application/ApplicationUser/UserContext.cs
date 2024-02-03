@@ -11,17 +11,21 @@ namespace MassageStudio.Application.ApplicationUser
 {
     public interface IUserContext
     {
-        CurrentUser? GetCurrentUser();
+        Task<CurrentUser?> GetCurrentUserAsync();
     }
     internal class UserContext : IUserContext
     {
         private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly SignInManager<Domain.Entities.ApplicationUser> signInManager;
+        private readonly UserManager<Domain.Entities.ApplicationUser> userManager;
 
-        public UserContext(IHttpContextAccessor httpContextAccessor)
+        public UserContext(IHttpContextAccessor httpContextAccessor, SignInManager<Domain.Entities.ApplicationUser> signInManager, UserManager<Domain.Entities.ApplicationUser> userManager)
         {
             this.httpContextAccessor = httpContextAccessor;
+            this.signInManager = signInManager;
+            this.userManager = userManager;
         }
-        public CurrentUser? GetCurrentUser()
+        public async Task<CurrentUser?> GetCurrentUserAsync()
         {
             var user = httpContextAccessor?.HttpContext?.User;
             if (user == null)
@@ -36,8 +40,15 @@ namespace MassageStudio.Application.ApplicationUser
             var id = user.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
             var email = user.FindFirst(x => x.Type == ClaimTypes.Email)!.Value;
             var roles = user.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToArray();
-            var name = user.FindFirst(x => x.Type == ClaimTypes.Name)!.Value;
-            return new CurrentUser(id, email, name, roles);
+            var name = "";
+            var lastName = "";
+            var userInManage = await userManager.FindByIdAsync(id);
+            if (userInManage != null)
+            {
+                name = userInManage.Name;
+                lastName = userInManage.LastName;
+            }
+            return new CurrentUser(id, email, name,lastName, roles);
         }
     }
 }

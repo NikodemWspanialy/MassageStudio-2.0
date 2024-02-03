@@ -1,0 +1,61 @@
+﻿@model MassageStudio.Application.ApplicationUser.Dtos.ApplicationUserDetailsDto
+
+@{
+    ViewData["Title"] = "Details";
+    bool isAdmin = Model.Roles.Contains("Admin");
+    bool isMasseur = Model.Roles.Contains("Masseur");
+}
+
+<h1>Zarządzaj</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (isAdmin)
+    {
+        <a class="btn btn-danger" asp-action="DeleteAdmin" asp-route-id="@Model.Id">Usuń role admina</a>
+    }
+    else
+    {
+        <a class="btn btn-outline-danger" asp-action="UpgradeAdmin" asp-route-id="@Model.Id">nadaj role admina</a>
+    }
+    @if (isMasseur)
+    {
+        <a class="btn btn-info" asp-action="DeleteMasseur" asp-route-id="@Model.Id">Usuń role masażysty</a>
+    }
+    else
+    {
+        <a class="btn btn-outline-info" asp-action="UpgradeMasseur" asp-route-id="@Model.Id">nadaj role masażysty</a>
+    }
+</div>
+<br />
+<div>
+    <a class="btn btn-dark" asp-action="Delete" asp-route-id="@Model.Id">Usuń</a>
+</div>

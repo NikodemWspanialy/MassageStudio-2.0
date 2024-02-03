@@ -1,17 +1,16 @@
-﻿@using MassageStudio.Domain.Entities
+﻿@using MassageStudio.Application.ApplicationUser
+@using MassageStudio.Domain.Entities
 @using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IUserContext userContext
 @{
     string name = null!;
-    if (SignInManager.IsSignedIn(User) && User.Identity != null)
+    var user = await userContext.GetCurrentUserAsync();
+    if (user != null)
     {
-        var user = await UserManager.FindByNameAsync(User.Identity.Name!);
-        if(user != null && user.Name != null)
-        {
-            name = user.Name;
-        }
+        name = user.Name;
     }
 }
 <ul class="navbar-nav">

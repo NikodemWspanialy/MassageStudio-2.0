@@ -15,21 +15,21 @@ namespace MassageStudio.Application.ApplicationUser.Queries.UserIsInRoles
         {
             this.userContext = userContext;
         }
-        public Task<bool> Handle(UserIsInRolesQuery request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UserIsInRolesQuery request, CancellationToken cancellationToken)
         {
-            var currentUser = userContext.GetCurrentUser();
+            var currentUser = await userContext.GetCurrentUserAsync();
             if (currentUser == null)
             {
-                return Task.FromResult(false);
+                return false;
             }
             foreach (var role in request.Roles)
             {
                 if (currentUser.IsInRole(role))
                 {
-                    return Task.FromResult(true);
+                    return true;
                 }
             }
-            return Task.FromResult(false);
+            return false;
         }
     }
 }
