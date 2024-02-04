@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MassageStudio.Infrastructure.Migrations
 {
     [DbContext(typeof(MassageStudioDbContext))]
-    [Migration("20240117094823_init")]
-    partial class init
+    [Migration("20240204134326_Init3")]
+    partial class Init3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,14 +27,14 @@ namespace MassageStudio.Infrastructure.Migrations
 
             modelBuilder.Entity("MassageStudio.Domain.Entities.Massage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ClientId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ClientLastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClientName")
                         .HasColumnType("nvarchar(max)");
@@ -47,6 +47,9 @@ namespace MassageStudio.Infrastructure.Migrations
 
                     b.Property<string>("MasseurId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MasseurLastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MasseurName")
                         .HasColumnType("nvarchar(max)");
@@ -322,11 +325,11 @@ namespace MassageStudio.Infrastructure.Migrations
 
             modelBuilder.Entity("MassageStudio.Domain.Entities.Massage", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
+                    b.HasOne("MassageStudio.Domain.Entities.ApplicationUser", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId");
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Masseur")
+                    b.HasOne("MassageStudio.Domain.Entities.ApplicationUser", "Masseur")
                         .WithMany()
                         .HasForeignKey("MasseurId");
 

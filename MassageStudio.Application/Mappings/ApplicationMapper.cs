@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MassageStudio.Application.ApplicationUser.Dtos;
+using MassageStudio.Application.Massages.Dtos;
 using MassageStudio.Application.Types.Commands.AddType;
 using MassageStudio.Application.Types.Commands.EditType;
 using MassageStudio.Application.Types.Dtos;
@@ -26,6 +27,9 @@ namespace MassageStudio.Application.Mappings
                 .ForMember(e => e.Name, opt => opt.MapFrom(src => src.Name));
 
             CreateMap<Domain.Entities.ApplicationUser, ApplicationUserDetailsDto>();
+
+            CreateMap<Domain.Entities.Massage, MassageToListDto>();
+            CreateMap<Domain.Entities.Massage, MassageDetailsDto>();
         }
     }
 }

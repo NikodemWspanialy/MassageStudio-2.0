@@ -16,9 +16,4 @@
     <ProjectReference Include="..\MassegeStudio.Domain\MassageStudio.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Massages\Commands\" />
-    <Folder Include="Massages\Queries\" />
-  </ItemGroup>
-
 </Project>

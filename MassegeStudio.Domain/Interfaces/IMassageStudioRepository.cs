@@ -13,5 +13,9 @@ namespace MassageStudio.Domain.Interfaces
         Task<IEnumerable<Entities.Type>> GetAllTypesAsync();
         Task SaveChangesAsync();
         void DeleteType(string name);
+        Task<IEnumerable<Entities.Massage>> GetAllMassagesAsync();
+        Task<Entities.Massage?> GetMassageByIsAsync(string id);
+        Task<string> CreateMassageEmptyAsync(Entities.Massage massage);
+        void DeleteMassage(string id);
     }
 }

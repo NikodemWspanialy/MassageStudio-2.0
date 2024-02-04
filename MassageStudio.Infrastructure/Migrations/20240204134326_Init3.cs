@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MassageStudio.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class add_name_and_lastname_to_applicationUser : Migration
+    public partial class Init3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -179,15 +179,16 @@ namespace MassageStudio.Infrastructure.Migrations
                 name: "Massages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TypeId = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SetupDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MasseurName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MasseurLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MasseurId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Free = table.Column<bool>(type: "bit", nullable: false),
                     ClientName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClientLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClientId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
