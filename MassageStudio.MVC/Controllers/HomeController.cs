@@ -1,5 +1,6 @@
 ﻿using MassageStudio.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.Diagnostics;
 
 namespace MassageStudio.MVC.Controllers

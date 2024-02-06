@@ -60,9 +60,14 @@ namespace MassageStudio.Infrastructure.Repositories
             }
         }
 
-        public async Task<IEnumerable<Massage>> GetAllMassagesAsync()
+        public async Task<IEnumerable<Massage>> GetPreviousMassagesAsync(DateTime date)
         {
-            return await dbContext.Massages.ToListAsync();
+            return await dbContext.Massages.Where(m => m.Date < date).OrderBy(m => m.Date).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Massage>> GetAllMassagesAsync(DateTime dateTime)
+        {
+            return await dbContext.Massages.Where(m => m.Date > dateTime).OrderBy(m => m.Date).ToArrayAsync();
         }
 
         public async Task<IEnumerable<Domain.Entities.Type>> GetAllTypesAsync()

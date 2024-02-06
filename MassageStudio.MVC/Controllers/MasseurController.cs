@@ -1,16 +1,46 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MassageStudio.Application.Massages.Dtos;
+using MassageStudio.Application.Massages.Queries.GetAllMassages;
+using MassageStudio.Application.Massages.Queries.GetFutureMassages;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MassageStudio.MVC.Controllers
 {
     public class MasseurController : Controller
     {
-        // GET: MasseurController - list of massages
-        public ActionResult Index()
-        {
-            return View();
-        }
+        private readonly IMediator mediator;
 
+        public MasseurController(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+        // GET: MasseurController - list of massages
+        public async Task<ActionResult> Index()
+        {
+            try
+            {
+                var massageListedDto = await mediator.Send(new GetFutureMassagesQuery());
+                return View(massageListedDto);
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        // GET: MasseurController - list of massages
+        public async Task<ActionResult> History()
+        {
+            try
+            {
+                var massageListedDto = await mediator.Send(new GetPreviousMassagesQuery());
+                return View(massageListedDto);
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
         // GET: MasseurController/Details/5 - szczegoly
         public ActionResult Details(int id)
         {
@@ -39,7 +69,7 @@ namespace MassageStudio.MVC.Controllers
         }
 
         // GET: MasseurController/Edit/5 - view
-        public ActionResult Edit(int id) 
+        public ActionResult Edit(int id)
         {
             return View();
         }

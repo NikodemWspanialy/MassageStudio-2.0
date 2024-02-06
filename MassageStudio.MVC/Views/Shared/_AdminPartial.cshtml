@@ -5,10 +5,10 @@
     @if (await mediator.Send(new UserIsInRolesQuery("Admin")))
     {  
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Type" asp-action="Index">Edycja masaży</a>
+            <a class="nav-link text-dark border border-danger mx-1 rounded-pill" asp-area="" asp-controller="Type" asp-action="Index">Edycja masaży</a>
     </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="UserManager" asp-action="Index">Użytkownicy</a>
+            <a class="nav-link text-dark border border-danger mx-1 rounded-pill" asp-area="" asp-controller="UserManager" asp-action="Index">Użytkownicy</a>
         </li>
     }
 }

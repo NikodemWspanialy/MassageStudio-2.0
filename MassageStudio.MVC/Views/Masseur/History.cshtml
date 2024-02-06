@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MassageStudio.Application.Massages.Dtos.MassageToListDto>
+@{
+    ViewData["Title"] = "Lista wszystkich masaży";
+
+    int rowCounter = 0;
+    string GetColor()
+    {
+        rowCounter = rowCounter + 1;
+        return rowCounter % 2 == 0 ? "background-color:rgb(180,180,180)" : "background-color:rgb(200,200,200)";
+
+    }
+}
+<div class="h1 mx-auto" style="width: 500px;">Historia terminów</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table table-sm">
+            <th scope="col">
+                imie
+            </th>
+            <th scope="col">
+                nazwisko
+            </th>
+            <th scope="col">
+                termin
+            </th>
+            <th scope="col">
+                zarezerwowany
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style=@GetColor()>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasseurName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasseurLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @if (item.Free)
+                    {
+                        <span>Tak</span>
+                    }
+                    else
+                    {
+                        <span>Nie</span>
+                    }
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

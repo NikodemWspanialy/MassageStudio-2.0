@@ -12,13 +12,15 @@ namespace MassageStudio.Application.Massages.Dtos
         public DateTime Date { get; set; }
         public bool Free { get; set; }
         public string MasseurName { get; set; }
+        public string MasseurLastName { get; set; }
 
-        public MassageToListDto(string id, DateTime date, bool free, string massureName)
-        {
-            Id = id;
-            Date = date;
-            Free = free;
-            MasseurName = massureName;
-        }
+        //public MassageToListDto(string id, DateTime date, bool free, string massureName, string masseurLastName)
+        //{
+        //    Id = id;
+        //    Date = date;
+        //    Free = free;
+        //    MasseurName = massureName;
+        //    MasseurLastName = masseurLastName;
+        //}
     }
 }
