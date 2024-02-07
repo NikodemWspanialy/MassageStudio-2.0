@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using MassageStudio.Application.ApplicationUser;
 using MassageStudio.Application.ApplicationUser.Dtos;
+using MassageStudio.Application.Massages.Commands.CreateMassageEmpty;
 using MassageStudio.Application.Massages.Dtos;
 using MassageStudio.Application.Types.Commands.AddType;
 using MassageStudio.Application.Types.Commands.EditType;
@@ -14,7 +16,8 @@ namespace MassageStudio.Application.Mappings
 {
     internal class ApplicationMapper : Profile
     {
-        public ApplicationMapper() {
+        public ApplicationMapper(IUserContext userContext) {
+            var user = userContext.GetCurrentUserAsync().Result;
             CreateMap<AddTypeCommand, Domain.Entities.Type>();
 
             CreateMap<Domain.Entities.Type, MassageTypeDto>();
@@ -29,7 +32,10 @@ namespace MassageStudio.Application.Mappings
             CreateMap<Domain.Entities.ApplicationUser, ApplicationUserDetailsDto>();
 
             CreateMap<Domain.Entities.Massage, MassageToListDto>();
-            CreateMap<Domain.Entities.Massage, MassageDetailsDto>();
+            CreateMap<Domain.Entities.Massage, MassageDetailsDto>()
+                .ForMember(dto => dto.Mutable, opt => opt.MapFrom(src => user != null && (src.MasseurId == user.Id || user.IsInRole("Admin"))));
+
+            CreateMap<CreateMassagEmptyDto, CreateMassageEmptyCommand>();
         }
     }
 }

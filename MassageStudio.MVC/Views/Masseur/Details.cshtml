@@ -1,0 +1,71 @@
+﻿@model MassageStudio.Application.Massages.Dtos.MassageDetailsDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MassageDetailsDto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SetupDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SetupDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MasseurName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MasseurName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MasseurLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MasseurLastName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Free)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Free)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClientLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClientLastName)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @if (Model.Mutable)
+    {
+        <a asp-action="Edit" class="btn btn-primary mx-2" asp-route-massageDto="@Model">Edytuj</a>
+    }
+    <a asp-action="Index" class="btn btn-primary mx-2">Back to List</a>
+</div>

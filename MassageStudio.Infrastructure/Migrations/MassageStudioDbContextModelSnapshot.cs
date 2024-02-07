@@ -54,7 +54,7 @@ namespace MassageStudio.Infrastructure.Migrations
                     b.Property<DateTime>("SetupDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TypeId")
+                    b.Property<int?>("TypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -332,9 +332,7 @@ namespace MassageStudio.Infrastructure.Migrations
 
                     b.HasOne("MassageStudio.Domain.Entities.Type", "Type")
                         .WithMany()
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TypeId");
 
                     b.Navigation("Client");
 

@@ -9,7 +9,7 @@ namespace MassageStudio.Application.Massages.Dtos
     public class MassageDetailsDto 
     {
         public string Id { get; set; }
-        public Type Type { get; set; } = default!;
+        public Type? Type { get; set; } 
         public DateTime Date { get; set; }
         public DateTime SetupDate { get; set; } = DateTime.Now;
         public string? MasseurName { get; set; }
@@ -19,5 +19,6 @@ namespace MassageStudio.Application.Massages.Dtos
         public string? ClientName { get; set; }
         public string? ClientLastName { get; set; }
         public string? ClientId { get; set; }
+        public bool Mutable { get; set; }
     }
 }

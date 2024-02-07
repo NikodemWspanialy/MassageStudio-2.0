@@ -26,10 +26,17 @@ namespace MassageStudio.Application.Massages.Commands.EditMassage
             {
                 try
                 {
-                var massage = await repository.GetMassageByIsAsync(request.Massage.Id);
+                var massage = await repository.GetMassageByIsAsync(request.Id);
                     if(massage != null)
                     {
-                        //zmiana
+                        massage.SetupDate = request.SetupDate;
+                        if(request.Free && !massage.Free)
+                        {
+                            massage.Free = true;
+                            massage.ClientId = null;
+                            massage.ClientName = null;
+                            massage.ClientLastName = null;
+                        }
 
                         await repository.SaveChangesAsync();
                         return Unit.Value;

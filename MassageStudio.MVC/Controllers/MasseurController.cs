@@ -1,12 +1,15 @@
-﻿using MassageStudio.Application.ApplicationUser;
+﻿using AutoMapper;
+using MassageStudio.Application.ApplicationUser;
 using MassageStudio.Application.Massages.Commands.CreateMassageEmpty;
 using MassageStudio.Application.Massages.Dtos;
 using MassageStudio.Application.Massages.Queries.GetAllMassages;
 using MassageStudio.Application.Massages.Queries.GetFutureMassages;
+using MassageStudio.Application.Massages.Queries.GetMassageDetails;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MassageStudio.MVC.Controllers
 {
@@ -15,14 +18,16 @@ namespace MassageStudio.MVC.Controllers
     {
         private readonly IMediator mediator;
         private readonly IUserContext userContext;
+        private readonly IMapper mapper;
 
-        public MasseurController(IMediator mediator, IUserContext userContext)
+        public MasseurController(IMediator mediator, IUserContext userContext, IMapper mapper)
         {
             this.mediator = mediator;
             this.userContext = userContext;
+            this.mapper = mapper;
         }
         // GET: MasseurController - list of massages
-        public async Task<ActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             try
             {
@@ -35,7 +40,7 @@ namespace MassageStudio.MVC.Controllers
             }
         }
         // GET: MasseurController - list of massages
-        public async Task<ActionResult> History()
+        public async Task<IActionResult> History()
         {
             try
             {
@@ -48,13 +53,25 @@ namespace MassageStudio.MVC.Controllers
             }
         }
         // GET: MasseurController/Details/5 - szczegoly
-        public ActionResult Details(int id)
+        public async Task<IActionResult> DetailsAsync(string id)
         {
-            return View();
+            try
+            {
+                var MassageDetails = await mediator.Send(new GetMassageDetailsQuery(id));
+                if (MassageDetails != null)
+                {
+                    return View(MassageDetails);
+                }
+            }
+            catch
+            {
+                //logger 
+            }
+            return RedirectToAction("Index");
         }
 
         // GET: MasseurController/Create - view
-        public async Task<ActionResult> CreateAsync()
+        public async Task<IActionResult> CreateAsync()
         {
             var user = await userContext.GetCurrentUserAsync();
             if (user != null)
@@ -74,28 +91,42 @@ namespace MassageStudio.MVC.Controllers
         // POST: MasseurController/Create - action
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> CreateAsync(CreateMassagEmptyDto createMassagEmptyDto)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    var command = mapper.Map<CreateMassageEmptyCommand>(createMassagEmptyDto);
+                    var resultId = await mediator.Send(command);
+                    return RedirectToAction("Details", "Masseur", resultId);
+                }
+                catch
+                {
+                    //logger / informacja zwrotna
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View(createMassagEmptyDto);
         }
 
         // GET: MasseurController/Edit/5 - view
-        public ActionResult Edit(int id)
+        public IActionResult Edit(MassageDetailsDto massageDto)
         {
-            return View();
+            try
+            {
+                return View(massageDto);
+            }
+            catch
+            {
+                //logger
+            }
+            return RedirectToAction("Details", "Masseur", massageDto.Id);
         }
 
         // POST: MasseurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -108,7 +139,7 @@ namespace MassageStudio.MVC.Controllers
         }
 
         // GET: MasseurController/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -116,7 +147,7 @@ namespace MassageStudio.MVC.Controllers
         // POST: MasseurController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

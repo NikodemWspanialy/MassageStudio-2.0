@@ -27,7 +27,10 @@ namespace MassageStudio.Application.Massages.Commands.CreateMassageEmpty
                 var id = currentUser.Id;
                 var name = currentUser.Name;
                 var lastname = currentUser.LastName;
-                var massage = new Domain.Entities.Massage(id, name, lastname, request.Date);
+                var massage = new Domain.Entities.Massage(id, name, lastname, request.Date)
+                {
+                    Id = Guid.NewGuid().ToString()   
+                };
                 
                 var createdId = await repository.CreateMassageEmptyAsync(massage);
                 return createdId;

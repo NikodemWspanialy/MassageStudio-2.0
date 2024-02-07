@@ -10,7 +10,7 @@ namespace MassageStudio.Domain.Entities
     public class Massage
     {
         public string Id { get; set; }
-        public Type Type { get; set; } = default!;
+        public Type? Type { get; set; }
         public DateTime Date { get; set; }
         public DateTime SetupDate { get; set; } = DateTime.Now;
         public string? MasseurName { get; set; }
@@ -26,7 +26,6 @@ namespace MassageStudio.Domain.Entities
         public Massage(string masseurId, string masseurName, string masseurLastName, DateTime date)
         {
             MasseurLastName = masseurLastName;
-            Id = Guid.NewGuid().ToString();
             MasseurId = masseurId;
             MasseurName = masseurName;
             Date = date;
@@ -35,7 +34,6 @@ namespace MassageStudio.Domain.Entities
         }
         public Massage()
         {
-            Id = Guid.NewGuid().ToString();
         }
     }
 }

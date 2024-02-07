@@ -32,14 +32,16 @@
             <th scope="col">
                 zarezerwowany
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr class="table" style=@GetColor(item.Free)>
+                
                 <td>
-                    @Html.DisplayFor(modelItem => item.MasseurName)
+                        @Html.DisplayFor(modelItem => item.MasseurName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MasseurLastName)
@@ -50,12 +52,15 @@
                 <td>
                     @if (item.Free)
                     {
-                        <span>Tak</span>
+                        <span>Nie</span>
                     }
                     else
                     {
-                        <span>Nie</span>
+                        <span>Tak</span>
                     }
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
                 </td>
             </tr>
 

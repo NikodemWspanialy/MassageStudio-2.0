@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MassageStudio.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74dcde6bc176560258bab9a2ec111e84b4045014")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f221fcd426ded3d239d7713f209d04768430462")]
 [assembly: System.Reflection.AssemblyProductAttribute("MassageStudio.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MassageStudio.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
