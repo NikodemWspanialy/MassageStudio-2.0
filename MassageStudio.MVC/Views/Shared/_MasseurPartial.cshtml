@@ -1,0 +1,17 @@
+﻿@using MassageStudio.Application.ApplicationUser.Queries.UserIsInRoles
+@using MediatR
+@inject IMediator mediator
+@{
+    @if (await mediator.Send(new UserIsInRolesQuery("Masseur")))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="Index">Terminarz</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="History">Historia</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="Create">Dodaj termin</a>
+        </li>
+    }
+}

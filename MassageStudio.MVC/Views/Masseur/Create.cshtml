@@ -1,0 +1,38 @@
+﻿@model MassageStudio.Application.Massages.Dtos.CreateMassagEmptyDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Dodaj wolny termin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group my-3">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="MasseurName" class="control-label">Imię masażysty</label>
+                <input asp-for="MasseurName" class="form-control" disabled/>
+                <span asp-validation-for="MasseurName" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="MasseurLastName" class="control-label">Nazwisko masażysty</label>
+                <input asp-for="MasseurLastName" class="form-control" disabled />
+                <span asp-validation-for="MasseurLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary my-3" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

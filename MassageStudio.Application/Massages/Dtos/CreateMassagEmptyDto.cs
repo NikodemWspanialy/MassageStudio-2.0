@@ -10,17 +10,13 @@ namespace MassageStudio.Application.Massages.Dtos
     {
         public DateTime Date { get; set; }
         public string? MasseurName { get; set; }
+        public string? MasseurLastName { get; set; }
         public string? MasseurId { get; set; }
 
         public CreateMassagEmptyDto()
         {
             
         }
-        public CreateMassagEmptyDto(DateTime date, string name, string Id)
-        {
-            Date = date;
-            MasseurName = name;
-            MasseurId = Id;
-        }
+       
     }
 }

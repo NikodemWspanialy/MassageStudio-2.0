@@ -14,8 +14,5 @@ namespace MassageStudio.Application.Massages.Commands.CreateMassageEmpty
         {
             
         }
-        public CreateMassageEmptyCommand(DateTime date, string name, string Id) : base(date, name, Id)
-        {
-        }
     }
 }

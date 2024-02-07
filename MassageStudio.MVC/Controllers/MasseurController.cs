@@ -1,19 +1,25 @@
-﻿using MassageStudio.Application.Massages.Dtos;
+﻿using MassageStudio.Application.ApplicationUser;
+using MassageStudio.Application.Massages.Commands.CreateMassageEmpty;
+using MassageStudio.Application.Massages.Dtos;
 using MassageStudio.Application.Massages.Queries.GetAllMassages;
 using MassageStudio.Application.Massages.Queries.GetFutureMassages;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MassageStudio.MVC.Controllers
 {
+    [Authorize(Roles = "Masseur")]
     public class MasseurController : Controller
     {
         private readonly IMediator mediator;
+        private readonly IUserContext userContext;
 
-        public MasseurController(IMediator mediator)
+        public MasseurController(IMediator mediator, IUserContext userContext)
         {
             this.mediator = mediator;
+            this.userContext = userContext;
         }
         // GET: MasseurController - list of massages
         public async Task<ActionResult> Index()
@@ -48,9 +54,21 @@ namespace MassageStudio.MVC.Controllers
         }
 
         // GET: MasseurController/Create - view
-        public ActionResult Create()
+        public async Task<ActionResult> CreateAsync()
         {
-            return View();
+            var user = await userContext.GetCurrentUserAsync();
+            if (user != null)
+            {
+
+                var model = new CreateMassagEmptyDto()
+                {
+                    MasseurName = user.Name,
+                    MasseurLastName = user.LastName,
+                    MasseurId = user.Id
+                };
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: MasseurController/Create - action
