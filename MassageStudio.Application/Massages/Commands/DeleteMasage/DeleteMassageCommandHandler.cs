@@ -26,7 +26,7 @@ namespace MassageStudio.Application.Massages.Commands.DeleteMasage
             {
                 try
                 {
-                    repository.DeleteMassage(request.Id);
+                    await repository.DeleteMassage(request.Id);
                 }
                 catch (Exception ex)
                 {

@@ -17,6 +17,6 @@ namespace MassageStudio.Domain.Interfaces
         Task<IEnumerable<Entities.Massage>> GetAllMassagesAsync(DateTime dateTime);
         Task<Entities.Massage?> GetMassageByIsAsync(string id);
         Task<string> CreateMassageEmptyAsync(Entities.Massage massage);
-        void DeleteMassage(string id);
+        Task DeleteMassage(string id);
     }
 }

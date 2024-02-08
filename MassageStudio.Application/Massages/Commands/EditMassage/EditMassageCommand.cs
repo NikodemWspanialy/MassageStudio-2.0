@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MassageStudio.Application.Massages.Commands.EditMassage
 {
-    public class EditMassageCommand : MassageDetailsDto, IRequest
+    public class EditMassageCommand : EditMassageDto, IRequest
     {
         
     }

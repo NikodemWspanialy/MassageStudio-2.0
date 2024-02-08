@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 
 namespace MassageStudio.Application.Massages.Commands.EditMassage
 {
-    public class EditMassageValidator : AbstractValidator<MassageDetailsDto>
+    public class EditMassageValidator : AbstractValidator<EditMassageDto>
     {
-        public EditMassageValidator()
-        {
-            //rules
-        }
     }
 }

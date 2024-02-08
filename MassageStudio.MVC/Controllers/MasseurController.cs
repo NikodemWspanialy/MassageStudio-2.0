@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MassageStudio.Application.ApplicationUser;
 using MassageStudio.Application.Massages.Commands.CreateMassageEmpty;
+using MassageStudio.Application.Massages.Commands.DeleteMasage;
+using MassageStudio.Application.Massages.Commands.EditMassage;
 using MassageStudio.Application.Massages.Dtos;
 using MassageStudio.Application.Massages.Queries.GetAllMassages;
 using MassageStudio.Application.Massages.Queries.GetFutureMassages;
@@ -27,6 +29,7 @@ namespace MassageStudio.MVC.Controllers
             this.mapper = mapper;
         }
         // GET: MasseurController - list of massages
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             try
@@ -40,6 +43,7 @@ namespace MassageStudio.MVC.Controllers
             }
         }
         // GET: MasseurController - list of massages
+        [HttpGet]
         public async Task<IActionResult> History()
         {
             try
@@ -53,6 +57,7 @@ namespace MassageStudio.MVC.Controllers
             }
         }
         // GET: MasseurController/Details/5 - szczegoly
+        [HttpGet]
         public async Task<IActionResult> DetailsAsync(string id)
         {
             try
@@ -71,6 +76,7 @@ namespace MassageStudio.MVC.Controllers
         }
 
         // GET: MasseurController/Create - view
+        [HttpGet]
         public async Task<IActionResult> CreateAsync()
         {
             var user = await userContext.GetCurrentUserAsync();
@@ -110,53 +116,61 @@ namespace MassageStudio.MVC.Controllers
         }
 
         // GET: MasseurController/Edit/5 - view
-        public IActionResult Edit(MassageDetailsDto massageDto)
+        [HttpGet]
+        public async Task<IActionResult> EditAsync(string id)
         {
             try
             {
-                return View(massageDto);
+                var massageDto = await mediator.Send(new GetMassageDetailsQuery(id));
+                var editmassageDto = mapper.Map<EditMassageDto>(massageDto);
+                return View(editmassageDto);
             }
             catch
             {
                 //logger
             }
-            return RedirectToAction("Details", "Masseur", massageDto.Id);
+            return RedirectToAction("Details", "Masseur", id);
         }
 
         // POST: MasseurController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(EditMassageDto massageDto)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var massageCommand = mapper.Map<EditMassageCommand>(massageDto);
+                await mediator.Send(massageCommand);
             }
             catch
             {
-                return View();
+                //Logger
             }
+            return RedirectToAction("Details", "Masseur", massageDto.Id);
         }
 
         // GET: MasseurController/Delete/5
-        public IActionResult Delete(int id)
+        [HttpGet]
+        public IActionResult Delete(string id)
         {
+            ViewData["MassageId"] = id;
             return View();
         }
 
         // POST: MasseurController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteSubmited(string id)
         {
             try
             {
+                await mediator.Send(new DeleteMassageCommand(id));
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return RedirectToAction("Details", "Masseur", id);
             }
+
         }
     }
 }

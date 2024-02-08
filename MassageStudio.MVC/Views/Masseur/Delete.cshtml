@@ -1,0 +1,14 @@
+﻿
+@{
+    string id = ViewData["MassageId"].ToString();   
+
+    ViewData["Title"] = "Delete";
+}
+<div>
+    <p>Czy na pewno chcesz usunąć ten termin</p>
+    <p>id : @id</p>
+    <p>
+        <a asp-action="DeleteSubmited" class="btn btn-danger" asp-route-id="@id">TAK</a>
+        <a asp-action="Details" class="btn btn-primary" asp-route-id="@id">NIE</a>
+    </p>
+</div>

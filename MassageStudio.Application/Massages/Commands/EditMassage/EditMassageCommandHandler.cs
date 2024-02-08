@@ -1,6 +1,7 @@
 ﻿using MassageStudio.Application.ApplicationUser;
 using MassageStudio.Domain.Interfaces;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace MassageStudio.Application.Massages.Commands.EditMassage
     {
         private readonly IMassageStudioRepository repository;
         private readonly IUserContext userContext;
+        private readonly UserManager<Domain.Entities.ApplicationUser> userManager;
 
-        public EditMassageCommandHandler(IMassageStudioRepository repository, IUserContext userContext)
+        public EditMassageCommandHandler(IMassageStudioRepository repository, IUserContext userContext, UserManager<Domain.Entities.ApplicationUser> userManager)
         {
             this.repository = repository;
             this.userContext = userContext;
+            this.userManager = userManager;
         }
         public async Task<Unit> Handle(EditMassageCommand request, CancellationToken cancellationToken)
         {
@@ -29,7 +32,7 @@ namespace MassageStudio.Application.Massages.Commands.EditMassage
                 var massage = await repository.GetMassageByIsAsync(request.Id);
                     if(massage != null)
                     {
-                        massage.SetupDate = request.SetupDate;
+                        massage.Date = request.Date;
                         if(request.Free && !massage.Free)
                         {
                             massage.Free = true;
@@ -37,7 +40,12 @@ namespace MassageStudio.Application.Massages.Commands.EditMassage
                             massage.ClientName = null;
                             massage.ClientLastName = null;
                         }
-
+                        else if (!request.Free && massage.Free)
+                        {
+                            massage.Free = false;
+                            massage.ClientName = "Zmienione recznie";
+                            massage.ClientLastName = "Zmienione recznie";
+                        }
                         await repository.SaveChangesAsync();
                         return Unit.Value;
                     }

@@ -23,7 +23,7 @@ namespace MassageStudio.MVC.Controllers
             this.mapper = mapper;
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             //nie dizała - do rozwiazania problem
@@ -34,7 +34,7 @@ namespace MassageStudio.MVC.Controllers
             return View(allTypes);
         }
 
-        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public IActionResult AddType()
         {
             return View();
@@ -51,6 +51,7 @@ namespace MassageStudio.MVC.Controllers
             return View(addTypeCommand);
         }
 
+        [HttpGet]
         [Route("MassageStudio/{name}/Edit")]
         public async Task<IActionResult> Edit(string name)
         {
@@ -67,6 +68,7 @@ namespace MassageStudio.MVC.Controllers
             await mediator.Send(editType);
             return RedirectToAction("Index", "Type");
         }
+        [HttpGet]
         public async Task<IActionResult> Delete(string name)
         {
             if (await mediator.Send(new UserIsInRolesQuery("Admin")))

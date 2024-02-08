@@ -39,15 +39,17 @@ namespace MassageStudio.Infrastructure.Repositories
             }
         }
 
-        public void DeleteMassage(string id)
+        public async Task DeleteMassage(string id)
         {
-            var massage = dbContext.Massages.FirstOrDefault(m => m.Id == id);
-            if(massage != null)
+            var massage = await dbContext.Massages.FirstOrDefaultAsync(x => x.Id == id);
+            if (massage != null)
             {
                 dbContext.Massages.Remove(massage);
                 dbContext.SaveChanges();
+                return;
             }
-            throw new Exception($"can not delete massage with id = {id}");
+            throw new Exception("Massage instance does not exist");
+
         }
 
         public void DeleteType(string name)
