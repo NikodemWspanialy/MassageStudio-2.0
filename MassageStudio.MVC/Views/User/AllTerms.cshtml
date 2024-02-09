@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MassageStudio.Application.Massages.Dtos.MassageToListDto>
+
+@{
+    ViewData["Title"] = "AllTerms";
+}
+
+<h1>AllTerms</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Free)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasseurName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasseurLastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Free)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasseurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasseurLastName)
+            </td>
+            <td>
+                    <a asp-action="Reserve" asp-route-id="@item.Id">Rezerwuj</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

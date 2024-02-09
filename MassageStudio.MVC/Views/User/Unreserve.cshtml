@@ -1,0 +1,17 @@
+﻿
+@{
+    string id = ViewBag.Id;
+    ViewData["Title"] = "Unreserve";
+}
+
+<div>
+    <h1>Unreserve</h1>
+    <div>Czy na pewno chcesz odmówić tą wizyte?</div>
+    <div>
+        <form action="/User/Unreserve" method="post">
+            <input type="hidden" name="id" value="@id" />
+            <button class="btn btn-primary" type="submit">Tak</button>
+        </form>
+        <a asp-action="UserTerms" class="btn btn-warning">Powrót</a>
+    </div>
+</div>

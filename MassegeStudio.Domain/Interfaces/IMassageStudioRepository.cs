@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MassageStudio.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,6 @@ namespace MassageStudio.Domain.Interfaces
         Task<Entities.Massage?> GetMassageByIsAsync(string id);
         Task<string> CreateMassageEmptyAsync(Entities.Massage massage);
         Task DeleteMassage(string id);
+        IEnumerable<Massage> GetMassages(Func<Massage, bool> func);
     }
 }

@@ -87,5 +87,10 @@ namespace MassageStudio.Infrastructure.Repositories
         {
             await dbContext.SaveChangesAsync();
         }
+
+        public IEnumerable<Massage> GetMassages(Func<Massage, bool> func)
+        {
+            return dbContext.Massages.Where(func).ToList();
+        }
     }
 }
