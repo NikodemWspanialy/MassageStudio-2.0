@@ -12,5 +12,6 @@
     <li>auto mapper (AutoMapper)</li>
     <li>Validator package (FluentValidator)</li>
     <li>mediator (MediaR)</li>
+    <li>Identity (Microsoft.AspNetCore.Identity)</li>
   </ul>
 </p>
