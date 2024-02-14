@@ -16,6 +16,9 @@ var scope = app.Services.CreateScope();
 var seeder = scope.ServiceProvider.GetRequiredService<MassageSeeder>();
 await seeder.Seed();
 
+var adminSeeder = scope.ServiceProvider.GetRequiredService<AdminSeeder>();
+await adminSeeder.Seed();   
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

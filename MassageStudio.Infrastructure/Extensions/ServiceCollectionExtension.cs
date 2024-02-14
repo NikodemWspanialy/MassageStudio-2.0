@@ -36,6 +36,7 @@ namespace MassageStudio.Infrastructure.Extensions
                 .AddEntityFrameworkStores<MassageStudioDbContext>();
             services.AddScoped<IMassageStudioRepository, MassageStudioRepository>();
             services.AddScoped<MassageSeeder>();
+            services.AddScoped<AdminSeeder>();
         }
     }
 }
