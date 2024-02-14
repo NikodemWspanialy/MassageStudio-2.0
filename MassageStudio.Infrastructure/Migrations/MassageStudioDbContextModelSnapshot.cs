@@ -54,16 +54,14 @@ namespace MassageStudio.Infrastructure.Migrations
                     b.Property<DateTime>("SetupDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("TypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("TypeName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClientId");
 
                     b.HasIndex("MasseurId");
-
-                    b.HasIndex("TypeId");
 
                     b.ToTable("Massages");
                 });
@@ -330,15 +328,9 @@ namespace MassageStudio.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("MasseurId");
 
-                    b.HasOne("MassageStudio.Domain.Entities.Type", "Type")
-                        .WithMany()
-                        .HasForeignKey("TypeId");
-
                     b.Navigation("Client");
 
                     b.Navigation("Masseur");
-
-                    b.Navigation("Type");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

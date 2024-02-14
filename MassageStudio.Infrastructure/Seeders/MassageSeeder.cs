@@ -24,14 +24,9 @@ namespace MassageStudio.Infrastructure.Seeders
                     var massage = new Domain.Entities.Massage()
                     {
                         Free = true,
-                        Type = new()
-                        {
-                            Name = "masaz test",
-                            Description = "opis test",
-                            Price = 100,
-                            Time = 60,
-                        },
-                        MasseurName = "Mariolka",
+                        TypeName = "KOBIDO",
+                        MasseurName = "Annna",
+                        MasseurLastName = "Testowa",
                         Date = DateTime.Now
                     };
                     context.Massages.Add(massage);

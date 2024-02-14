@@ -92,5 +92,10 @@ namespace MassageStudio.Infrastructure.Repositories
         {
             return dbContext.Massages.Where(func).ToList();
         }
+
+        public async Task<Domain.Entities.Type?> GetTypeByIdAsync(int id)
+        {
+            return await dbContext.MassageTypes.FirstOrDefaultAsync(t => t.Id == id);
+        }
     }
 }

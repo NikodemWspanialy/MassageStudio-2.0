@@ -1,8 +1,10 @@
 ﻿using MassageStudio.Application.ApplicationUser;
 using MassageStudio.Application.Massages.Queries.GetMassageDetails;
+using MassageStudio.Application.Types.Queries.GetAllTypes;
 using MassageStudio.Application.UserActions.Commands.ReserveTerm;
 using MassageStudio.Application.UserActions.Commands.UnreserveTerm;
 using MassageStudio.Application.UserActions.Queries.GetMassages;
+using MassageStudio.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -46,15 +48,16 @@ namespace MassageStudio.MVC.Controllers
             return View(massage);  
         }
         [HttpGet]
-        public IActionResult Reserve(string id)
-        {
-            ViewBag.Id = id;
-            return View();
-        }
-        [HttpPost]
         public async Task<IActionResult> ReserveAsync(string id)
         {
-            var result = await mediator.Send(new ReserveTermCommand(id));
+            ViewBag.Id = id;
+            var types = await mediator.Send(new GetAllTypesQuery());
+            return View(types);
+        }
+        [HttpPost]
+        public async Task<IActionResult> ReserveAsync(string id, string massageType)
+        {
+            var result = await mediator.Send(new ReserveTermCommand(id, massageType));
             if(result == IdentityResult.Success)
             {
                 return RedirectToAction("UserTerms", "User");

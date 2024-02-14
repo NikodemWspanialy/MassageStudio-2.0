@@ -10,7 +10,8 @@ namespace MassageStudio.Domain.Entities
     public class Massage
     {
         public string Id { get; set; }
-        public Type? Type { get; set; }
+        public string? TypeName { get; set; }
+        //public Type? Type { get; set; }
         public DateTime Date { get; set; }
         public DateTime SetupDate { get; set; } = DateTime.Now;
         public string? MasseurName { get; set; }

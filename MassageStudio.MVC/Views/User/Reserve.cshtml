@@ -1,14 +1,23 @@
-﻿@{
+﻿@model IEnumerable<MassageStudio.Application.Types.Dtos.MassageTypeDto>
+@{
     string id = ViewBag.Id;
     ViewData["Title"] = "Reserve";
     
 }
 <div>
     <h1>Reserve</h1>
-    <div>Czy na pewno chcesz zarezerwować ten termin?</div>
     <div>
         <form action="/User/Reserve" method="post">
             <input type="hidden" name="id" value="@id"/>
+            <label for="massageType">Wbybierz rodzaj masażu</label>
+            <select id="massageType" name="massageType">
+                @foreach(var opt in Model)
+                {
+                    <option value="@opt.Name">@opt.Name</option>
+                }
+            </select>
+
+    <div>Czy na pewno chcesz zarezerwować ten termin?</div>
             <button class="btn btn-primary" type="submit">Tak</button>
         </form> 
         <a asp-action="AllTerms" class="btn btn-warning">Powrót</a>

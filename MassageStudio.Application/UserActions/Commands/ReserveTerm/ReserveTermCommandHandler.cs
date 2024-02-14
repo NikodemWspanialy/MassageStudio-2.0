@@ -28,10 +28,17 @@ namespace MassageStudio.Application.UserActions.Commands.ReserveTerm
                 var massage = await repository.GetMassageByIsAsync(request.Id);
                 if (massage != null && massage.Free)
                 {
+                    var type = await repository.GetTypeByNameAsync(request.Type);
+                    if (type == null)
+                    {
+                        throw new NullReferenceException(nameof(type));
+                    }
+                    massage.TypeName = type.Name;
                     massage.Free = false;
                     massage.ClientId = currentUser.Id;
                     massage.ClientName = currentUser.Name;
                     massage.ClientLastName = currentUser.LastName;
+
                     await repository.SaveChangesAsync();
                     return IdentityResult.Success;
                 }

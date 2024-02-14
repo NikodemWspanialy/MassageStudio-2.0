@@ -32,6 +32,7 @@ namespace MassageStudio.Application.UserActions.Commands.UnreserveTerm
                     massage.ClientId = null;
                     massage.ClientName = null;
                     massage.ClientLastName = null;
+                    massage.TypeName = null;
                     await repository.SaveChangesAsync();
                     return IdentityResult.Success;
                 }

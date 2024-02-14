@@ -22,10 +22,7 @@ namespace MassageStudio.Infrastructure.Persistance
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<Domain.Entities.Massage>(o =>
-            {
-                o.HasOne(p => p.Type);
-            });
+           
         }
     }
 }

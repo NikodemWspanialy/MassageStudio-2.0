@@ -11,6 +11,7 @@ namespace MassageStudio.Domain.Interfaces
     {
         Task AddTypeAsync(Domain.Entities.Type type);
         Task<Domain.Entities.Type?> GetTypeByNameAsync(string name);
+        Task<Domain.Entities.Type?> GetTypeByIdAsync(int id);
         Task<IEnumerable<Entities.Type>> GetAllTypesAsync();
         Task SaveChangesAsync();
         void DeleteType(string name);

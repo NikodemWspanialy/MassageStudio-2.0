@@ -12,10 +12,12 @@ namespace MassageStudio.Application.UserActions.Commands.ReserveTerm
     public class ReserveTermCommand : IRequest<IdentityResult>
     {
         public string Id { get; set; }
+        public string Type { get; set; }
 
-        public ReserveTermCommand(string id)
+        public ReserveTermCommand(string massageId, string type)
         {
-            Id = id;
+            this.Id = massageId;
+            Type = type;
         }
     }
 }
