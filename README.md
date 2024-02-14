@@ -15,3 +15,4 @@
     <li>Identity (Microsoft.AspNetCore.Identity)</li>
   </ul>
 </p>
+<p>At this moment application does not have Views, only backennd side</p>
