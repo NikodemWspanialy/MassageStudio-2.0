@@ -5,10 +5,13 @@ using MassageStudio.Application.UserActions.Commands.ReserveTerm;
 using MassageStudio.Application.UserActions.Commands.UnreserveTerm;
 using MassageStudio.Application.UserActions.Queries.GetMassages;
 using MassageStudio.Domain.Entities;
+using MassageStudio.MVC.Extensions;
+using MassageStudio.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace MassageStudio.MVC.Controllers
 {
@@ -58,8 +61,10 @@ namespace MassageStudio.MVC.Controllers
         public async Task<IActionResult> ReserveAsync(string id, string massageType)
         {
             var result = await mediator.Send(new ReserveTermCommand(id, massageType));
-            if(result == IdentityResult.Success)
+            if (result == IdentityResult.Success)
             {
+                //toast
+                this.SetNotification("success", "massage reserved!");
                 return RedirectToAction("UserTerms", "User");
             }
             else

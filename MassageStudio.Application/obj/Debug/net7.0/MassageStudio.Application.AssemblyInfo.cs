@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+001e7a6def8656c802ea22c2926b674a6643e3cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+092efdc9cd6956d66bfcecfaed44637516b4cedd")]
 [assembly: System.Reflection.AssemblyProductAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

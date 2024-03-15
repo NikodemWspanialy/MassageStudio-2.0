@@ -553,3 +553,4 @@ C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassageStudio.MVC\obj\Debug\net
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassageStudio.MVC\obj\Debug\net7.0\MassageStudio.MVC.pdb
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassageStudio.MVC\obj\Debug\net7.0\MassageStudio.MVC.genruntimeconfig.cache
 C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassageStudio.MVC\obj\Debug\net7.0\ref\MassageStudio.MVC.dll
+C:\PRJs\ASP.NET_CORE_PRJs\PRJs\MassageStudio-2.0\MassageStudio.MVC\bin\Debug\net7.0\libman.json

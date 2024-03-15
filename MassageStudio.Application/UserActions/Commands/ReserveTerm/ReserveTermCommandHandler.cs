@@ -31,7 +31,7 @@ namespace MassageStudio.Application.UserActions.Commands.ReserveTerm
                     var type = await repository.GetTypeByNameAsync(request.Type);
                     if (type == null)
                     {
-                        throw new NullReferenceException(nameof(type));
+                        return IdentityResult.Failed();
                     }
                     massage.TypeName = type.Name;
                     massage.Free = false;

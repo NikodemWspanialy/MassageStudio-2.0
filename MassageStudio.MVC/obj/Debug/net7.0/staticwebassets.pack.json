@@ -245,6 +245,22 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\lib\\toastr.js\\toastr.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\lib\\toastr.js\\toastr.js.map",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.js.map"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\lib\\toastr.js\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\lib\\toastr.js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.js"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.MassageStudio.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
