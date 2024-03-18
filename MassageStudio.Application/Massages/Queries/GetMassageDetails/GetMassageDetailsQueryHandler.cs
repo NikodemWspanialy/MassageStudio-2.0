@@ -13,11 +13,11 @@ namespace MassageStudio.Application.Massages.Queries.GetMassageDetails
 {
     internal class GetMassageDetailsQueryHandler : IRequestHandler<GetMassageDetailsQuery, MassageDetailsDto>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IMapper mapper;
         private readonly IUserContext userContext;
 
-        public GetMassageDetailsQueryHandler(IMassageStudioRepository repository, IMapper mapper, IUserContext userContext)
+        public GetMassageDetailsQueryHandler(IMassageTermRepository repository, IMapper mapper, IUserContext userContext)
         {
             this.repository = repository;
             this.mapper = mapper;

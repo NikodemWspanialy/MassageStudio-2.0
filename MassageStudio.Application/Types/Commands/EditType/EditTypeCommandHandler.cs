@@ -10,9 +10,9 @@ namespace MassageStudio.Application.Types.Commands.EditType
 {
     internal class EditTypeCommandHandler : IRequestHandler<EditTypeCommand>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTypeRepository repository;
 
-        public EditTypeCommandHandler(IMassageStudioRepository repository)
+        public EditTypeCommandHandler(IMassageTypeRepository repository)
         {
             this.repository = repository;
         }

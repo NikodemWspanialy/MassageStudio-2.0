@@ -11,10 +11,10 @@ namespace MassageStudio.Application.Types.Commands.AddType
 {
     internal class AddTypeCommandHandler : IRequestHandler<AddTypeCommand>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTypeRepository repository;
         private readonly IMapper mapper;
 
-        public AddTypeCommandHandler(IMassageStudioRepository repository, IMapper mapper) {
+        public AddTypeCommandHandler(IMassageTypeRepository repository, IMapper mapper) {
             this.repository = repository;
             this.mapper = mapper;
         }

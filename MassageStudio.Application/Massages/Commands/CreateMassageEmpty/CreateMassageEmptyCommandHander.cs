@@ -11,10 +11,10 @@ namespace MassageStudio.Application.Massages.Commands.CreateMassageEmpty
 {
     internal class CreateMassageEmptyCommandHander : IRequestHandler<CreateMassageEmptyCommand, string?>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IUserContext userContext;
 
-        public CreateMassageEmptyCommandHander(IMassageStudioRepository repository, IUserContext userContext)
+        public CreateMassageEmptyCommandHander(IMassageTermRepository repository, IUserContext userContext)
         {
             this.repository = repository;
             this.userContext = userContext;

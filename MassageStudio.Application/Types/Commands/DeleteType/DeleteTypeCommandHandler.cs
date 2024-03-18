@@ -10,9 +10,9 @@ namespace MassageStudio.Application.Types.Commands.DeleteType
 {
     internal class DeleteTypeCommandHandler : IRequestHandler<DeleteTypeCommand>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTypeRepository repository;
 
-        public DeleteTypeCommandHandler(IMassageStudioRepository repository)
+        public DeleteTypeCommandHandler(IMassageTypeRepository repository)
         {
             this.repository = repository;
         }

@@ -12,10 +12,10 @@ namespace MassageStudio.Application.UserActions.Commands.UnreserveTerm
 {
     internal class UnreserveTermCommandHandler : IRequestHandler<UnreserveTermCommand, IdentityResult>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IUserContext userContext;
 
-        public UnreserveTermCommandHandler(IMassageStudioRepository repository, IUserContext userContext)
+        public UnreserveTermCommandHandler(IMassageTermRepository repository, IUserContext userContext)
         {
             this.repository = repository;
             this.userContext = userContext;

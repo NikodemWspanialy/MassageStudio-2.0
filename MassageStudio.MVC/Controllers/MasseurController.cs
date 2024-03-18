@@ -56,7 +56,7 @@ namespace MassageStudio.MVC.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        // GET: MasseurController/Details/5 - szczegoly
+        // GET: MasseurController/Details
         [HttpGet]
         public async Task<IActionResult> DetailsAsync(string id)
         {
@@ -115,7 +115,7 @@ namespace MassageStudio.MVC.Controllers
             return View(createMassagEmptyDto);
         }
 
-        // GET: MasseurController/Edit/5 - view
+        // GET: MasseurController/Edit/5
         [HttpGet]
         public async Task<IActionResult> EditAsync(string id)
         {
@@ -157,8 +157,9 @@ namespace MassageStudio.MVC.Controllers
             return View();
         }
 
-        // POST: MasseurController/Delete/5
+        // POST: MasseurController/Delete/
         //[ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteSubmited(string id)
         {
             try

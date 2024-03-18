@@ -12,11 +12,11 @@ namespace MassageStudio.Application.Massages.Commands.EditMassage
 {
     internal class EditMassageCommandHandler : IRequestHandler<EditMassageCommand>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IUserContext userContext;
         private readonly UserManager<Domain.Entities.ApplicationUser> userManager;
 
-        public EditMassageCommandHandler(IMassageStudioRepository repository, IUserContext userContext, UserManager<Domain.Entities.ApplicationUser> userManager)
+        public EditMassageCommandHandler(IMassageTermRepository repository, IUserContext userContext, UserManager<Domain.Entities.ApplicationUser> userManager)
         {
             this.repository = repository;
             this.userContext = userContext;

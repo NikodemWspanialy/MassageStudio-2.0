@@ -61,14 +61,12 @@ namespace MassageStudio.MVC.Controllers
             //stworzyc widok do edycji
         }
 
-        [HttpPost]
         [Route("MassageStudio/{name}/Edit")]
         public async Task<IActionResult> Edit(string name, EditTypeCommand editType)
         {
             await mediator.Send(editType);
             return RedirectToAction("Index", "Type");
         }
-        [HttpGet]
         public async Task<IActionResult> Delete(string name)
         {
             if (await mediator.Send(new UserIsInRolesQuery("Admin")))

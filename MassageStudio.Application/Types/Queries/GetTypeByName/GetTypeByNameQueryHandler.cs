@@ -12,10 +12,10 @@ namespace MassageStudio.Application.Types.Queries.GetTypeByName
 {
     internal class GetTypeByNameQueryHandler : IRequestHandler<GetTypeByNameQuery, MassageTypeDto>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTypeRepository repository;
         private readonly IMapper mapper;
 
-        public GetTypeByNameQueryHandler(IMassageStudioRepository repository, IMapper mapper)
+        public GetTypeByNameQueryHandler(IMassageTypeRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;

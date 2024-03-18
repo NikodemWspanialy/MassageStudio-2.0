@@ -12,12 +12,14 @@ namespace MassageStudio.Application.UserActions.Commands.ReserveTerm
 {
     internal class ReserveTermCommandHandler : IRequestHandler<ReserveTermCommand, IdentityResult>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
+        private readonly IMassageTypeRepository typeRepository;
         private readonly IUserContext userContext;
 
-        public ReserveTermCommandHandler(IMassageStudioRepository repository, IUserContext userContext)
+        public ReserveTermCommandHandler(IMassageTermRepository termRepository,IMassageTypeRepository typeRepository,  IUserContext userContext)
         {
-            this.repository = repository;
+            this.repository = termRepository;
+            this.typeRepository = typeRepository;
             this.userContext = userContext;
         }
         public async Task<IdentityResult> Handle(ReserveTermCommand request, CancellationToken cancellationToken)
@@ -28,7 +30,7 @@ namespace MassageStudio.Application.UserActions.Commands.ReserveTerm
                 var massage = await repository.GetMassageByIsAsync(request.Id);
                 if (massage != null && massage.Free)
                 {
-                    var type = await repository.GetTypeByNameAsync(request.Type);
+                    var type = await typeRepository.GetTypeByNameAsync(request.Type);
                     if (type == null)
                     {
                         return IdentityResult.Failed();

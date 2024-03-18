@@ -12,10 +12,10 @@ namespace MassageStudio.Application.Types.Queries.GetAllTypes
 {
     internal class GetAllTypesQueryHandler : IRequestHandler<GetAllTypesQuery, IEnumerable<MassageTypeDto>>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTypeRepository repository;
         private readonly IMapper mapper;
 
-        public GetAllTypesQueryHandler(IMassageStudioRepository repository, IMapper mapper)
+        public GetAllTypesQueryHandler(IMassageTypeRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;

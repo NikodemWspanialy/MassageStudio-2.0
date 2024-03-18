@@ -34,7 +34,10 @@ namespace MassageStudio.Infrastructure.Extensions
             })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<MassageStudioDbContext>();
-            services.AddScoped<IMassageStudioRepository, MassageStudioRepository>();
+
+
+            services.AddScoped<IMassageTermRepository, MassageTermRepository>();
+            services.AddScoped<IMassageTypeRepository, MassageTypeRepository>();
             services.AddScoped<MassageSeeder>();
             services.AddScoped<AdminSeeder>();
         }

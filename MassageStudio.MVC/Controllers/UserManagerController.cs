@@ -18,12 +18,14 @@ namespace MassageStudio.MVC.Controllers
         {
             this.mediator = mediator;
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
 
             var users = await mediator.Send(new GetAllUsersQuery());
             return View(users);
         }
+        [HttpGet]
         [Route("MassageStudio/Details/{name}_{lastName}")]
         public async Task<IActionResult> DetailsAsync(string id, string name, string lastName)
         {

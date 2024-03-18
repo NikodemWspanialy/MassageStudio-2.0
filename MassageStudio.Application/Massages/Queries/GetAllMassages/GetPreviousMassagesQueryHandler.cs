@@ -13,11 +13,11 @@ namespace MassageStudio.Application.Massages.Queries.GetAllMassages
 {
     internal class GetPreviousMassagesQueryHandler : IRequestHandler<GetPreviousMassagesQuery, IEnumerable<MassageToListDto>>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IUserContext userContex;
         private readonly IMapper mapper;
 
-        public GetPreviousMassagesQueryHandler(IMassageStudioRepository repository, IUserContext userContex, IMapper mapper)
+        public GetPreviousMassagesQueryHandler(IMassageTermRepository repository, IUserContext userContex, IMapper mapper)
         {
             this.repository = repository;
             this.userContex = userContex;

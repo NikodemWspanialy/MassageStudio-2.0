@@ -11,19 +11,15 @@ using System.Threading.Tasks;
 
 namespace MassageStudio.Infrastructure.Repositories
 {
-    internal class MassageStudioRepository : IMassageStudioRepository
+    internal class MassageTermRepository : IMassageTermRepository
     {
         private readonly MassageStudioDbContext dbContext;
 
-        public MassageStudioRepository(MassageStudioDbContext dbContext)
+        public MassageTermRepository(MassageStudioDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public async Task AddTypeAsync(Domain.Entities.Type type)
-        {
-            await dbContext.MassageTypes.AddAsync(type);
-            await dbContext.SaveChangesAsync();
-        }
+
 
         public async Task<string> CreateMassageEmptyAsync(Massage massage)
         {
@@ -52,15 +48,7 @@ namespace MassageStudio.Infrastructure.Repositories
 
         }
 
-        public void DeleteType(string name)
-        {
-            var type = dbContext.MassageTypes.FirstOrDefault(t => t.Name == name);
-            if (type != null)
-            {
-                dbContext.MassageTypes.Remove(type);
-                dbContext.SaveChanges();
-            }
-        }
+
 
         public async Task<IEnumerable<Massage>> GetPreviousMassagesAsync(DateTime date)
         {
@@ -72,16 +60,10 @@ namespace MassageStudio.Infrastructure.Repositories
             return await dbContext.Massages.Where(m => m.Date > dateTime).OrderBy(m => m.Date).ToArrayAsync();
         }
 
-        public async Task<IEnumerable<Domain.Entities.Type>> GetAllTypesAsync()
-        {
-            return await dbContext.MassageTypes.ToListAsync();
-        }
 
         public async Task<Massage?> GetMassageByIsAsync(string id)
             => await dbContext.Massages.FirstOrDefaultAsync(m => m.Id == id);
 
-        public async Task<Domain.Entities.Type?> GetTypeByNameAsync(string name)
-            => await dbContext.MassageTypes.FirstOrDefaultAsync(t => t.Name == name);
 
         public async Task SaveChangesAsync()
         {
@@ -93,9 +75,5 @@ namespace MassageStudio.Infrastructure.Repositories
             return dbContext.Massages.Where(func).ToList();
         }
 
-        public async Task<Domain.Entities.Type?> GetTypeByIdAsync(int id)
-        {
-            return await dbContext.MassageTypes.FirstOrDefaultAsync(t => t.Id == id);
-        }
     }
 }

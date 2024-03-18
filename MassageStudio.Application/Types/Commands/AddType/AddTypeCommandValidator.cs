@@ -10,7 +10,7 @@ namespace MassageStudio.Application.Types.Commands.AddType
 {
     public class AddTypeCommandValidator : AbstractValidator<AddTypeCommand>
     {
-        public AddTypeCommandValidator(IMassageStudioRepository repository)
+        public AddTypeCommandValidator(IMassageTypeRepository repository)
         {
             RuleFor(c => c.Name)
                 .NotEmpty()

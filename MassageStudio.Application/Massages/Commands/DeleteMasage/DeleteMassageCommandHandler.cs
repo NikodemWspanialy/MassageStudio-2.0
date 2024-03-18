@@ -11,10 +11,10 @@ namespace MassageStudio.Application.Massages.Commands.DeleteMasage
 {
     internal class DeleteMassageCommandHandler : IRequestHandler<DeleteMassageCommand>
     {
-        private readonly IMassageStudioRepository repository;
+        private readonly IMassageTermRepository repository;
         private readonly IUserContext userContext;
 
-        public DeleteMassageCommandHandler(IMassageStudioRepository repository, IUserContext userContext)
+        public DeleteMassageCommandHandler(IMassageTermRepository repository, IUserContext userContext)
         {
             this.repository = repository;
             this.userContext = userContext;
