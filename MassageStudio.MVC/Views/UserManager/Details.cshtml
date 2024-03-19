@@ -1,22 +1,23 @@
 ﻿@model MassageStudio.Application.ApplicationUser.Dtos.ApplicationUserDetailsDto
 
+<link rel="stylesheet" href="~/css/fontello/css/fontello.css" />
 @{
     ViewData["Title"] = "Details";
     bool isAdmin = Model.Roles.Contains("Admin");
     bool isMasseur = Model.Roles.Contains("Masseur");
 }
+<div class="h1">
+    <a asp-action="." class="btn btn-outline-dark border-3 border-dark ">
+        <i class="demo-icon icon-left-open"></i>
+    </a>
+    <span>
+        Szczegóły
+    </span>
+</div>
 
-<h1>Zarządzaj</h1>
-
-<div>
-    <hr />
+<hr />
+<div class="container-fluid">
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -37,25 +38,26 @@
         </dd>
     </dl>
 </div>
-<div>
+<hr />
+<div class="row container-sm">
     @if (isAdmin)
     {
-        <a class="btn btn-danger" asp-action="DeleteAdmin" asp-route-id="@Model.Id">Usuń role admina</a>
+        <a class="col-lg-2 col-6 btn btn-danger m-1" asp-action="DeleteAdmin" asp-route-id="@Model.Id">Usuń role admina</a>
     }
     else
+
     {
-        <a class="btn btn-outline-danger" asp-action="UpgradeAdmin" asp-route-id="@Model.Id">nadaj role admina</a>
+        <a class="col-lg-2 col-6 btn btn-outline-danger m-1" asp-action="UpgradeAdmin" asp-route-id="@Model.Id">nadaj role admina</a>
     }
     @if (isMasseur)
     {
-        <a class="btn btn-info" asp-action="DeleteMasseur" asp-route-id="@Model.Id">Usuń role masażysty</a>
+        <a class="col-lg-2 col-6 btn btn-info m-1" asp-action="DeleteMasseur" asp-route-id="@Model.Id">Usuń role masażysty</a>
     }
     else
     {
-        <a class="btn btn-outline-info" asp-action="UpgradeMasseur" asp-route-id="@Model.Id">nadaj role masażysty</a>
+        <a class="col-lg-2 col-6 btn btn-outline-info m-1" asp-action="UpgradeMasseur" asp-route-id="@Model.Id">nadaj role masażysty</a>
     }
-</div>
-<br />
-<div>
-    <a class="btn btn-dark" asp-action="Delete" asp-route-id="@Model.Id">Usuń</a>
+    <br />
+    <div class="h-100"></div>
+        <a class="btn btn-dark col-lg-2 col-6 mt-2 mx-1" asp-action="Delete" asp-route-id="@Model.Id">Usuń użytkownika</a>
 </div>

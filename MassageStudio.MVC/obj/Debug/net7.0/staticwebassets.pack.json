@@ -5,6 +5,62 @@
       "PackagePath": "staticwebassets\\MassageStudio.MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\css\\fontello\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\README.txt",
+      "PackagePath": "staticwebassets\\css\\fontello\\README.txt"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\config.json",
+      "PackagePath": "staticwebassets\\css\\fontello\\config.json"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\animation.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\animation.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\fontello-codes.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\fontello-codes.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\fontello-embedded.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\fontello-embedded.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\fontello-ie7-codes.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\fontello-ie7-codes.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\fontello-ie7.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\fontello-ie7.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\css\\fontello.css",
+      "PackagePath": "staticwebassets\\css\\fontello\\css\\fontello.css"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\font\\fontello.eot",
+      "PackagePath": "staticwebassets\\css\\fontello\\font\\fontello.eot"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\font\\fontello.svg",
+      "PackagePath": "staticwebassets\\css\\fontello\\font\\fontello.svg"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\font\\fontello.ttf",
+      "PackagePath": "staticwebassets\\css\\fontello\\font\\fontello.ttf"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\font\\fontello.woff",
+      "PackagePath": "staticwebassets\\css\\fontello\\font\\fontello.woff"
+    },
+    {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\fontello\\font\\fontello.woff2",
+      "PackagePath": "staticwebassets\\css\\fontello\\font\\fontello.woff2"
+    },
+    {
       "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

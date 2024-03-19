@@ -4,26 +4,18 @@
     ViewData["Title"] = "AllTerms";
 }
 
-<h1>AllTerms</h1>
+<h1>Dostępne terminy</h1>
+<hr />
 
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Free)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MasseurName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MasseurLastName)
+                Masażysta
             </th>
             <th></th>
         </tr>
@@ -32,22 +24,14 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Free)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.MasseurName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.MasseurLastName)
             </td>
-            <td>
-                    <a asp-action="Reserve" asp-route-id="@item.Id">Rezerwuj</a>
+            <td class="text-center">
+                    <a asp-action="Reserve" class="btn btn-primary" asp-route-id="@item.Id">Rezerwuj</a>
             </td>
         </tr>
 }

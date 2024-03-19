@@ -1,84 +1,61 @@
 ﻿@model MassageStudio.Application.Massages.Dtos.MassageDetailsDto
 
+
+<link rel="stylesheet" href="~/css/fontello/css/fontello.css" />
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<div class="h1">
+    <a asp-action="UserTerms" class="btn btn-outline-dark border-3 border-dark ">
+        <i class="demo-icon icon-left-open"></i>
+    </a>
+    <span>
+        Szczegóły masażu
+    </span>
+</div>
 <div>
-    <h4>MassageDetailsDto</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TypeName)
+            Rodzaj masażu
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TypeName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
+            Data
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Date)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SetupDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SetupDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MasseurName)
+            Imię masażysty
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.MasseurName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MasseurLastName)
+            Nazwisko masażysty
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.MasseurLastName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MasseurId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MasseurId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Free)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Free)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientName)
+            Imię klienta
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClientName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientLastName)
+            Nazwisko klienta
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClientLastName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClientId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Mutable)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Mutable)
-        </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Unreserve" asp-route-id="@Model.Id">Odmów</a>
-    <a asp-action="UserTerms">Back to List</a>
+<hr />
+<div class="row">
+    <a asp-action="Unreserve" class="btn btn-primary col-6 col-lg-2 m-1" asp-route-id="@Model.Id">Odmów</a>
 </div>
