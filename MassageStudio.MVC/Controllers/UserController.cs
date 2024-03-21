@@ -73,12 +73,6 @@ namespace MassageStudio.MVC.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        [HttpGet]
-        public IActionResult UnreserveAsync(string id)
-        {
-            ViewBag.Id = id;
-            return View();
-        }
         [HttpPost]
         public async Task<IActionResult> Unreserve(string id)
         {

@@ -57,5 +57,41 @@
 </div>
 <hr />
 <div class="row">
-    <a asp-action="Unreserve" class="btn btn-primary col-6 col-lg-2 m-1" asp-route-id="@Model.Id">Odmów</a>
+    @* <a asp-action="Unreserve" class="btn btn-primary col-6 col-lg-2 m-1" asp-route-id="@Model.Id">Odmów</a> *@
+    <!-- Button trigger modal -->
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-danger col-6 col-lg-2 m-1" data-bs-toggle="modal" data-bs-target="#myModal">
+        Odmów
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title text-center">Odmów wizytę</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <div >
+
+                    Czy na pewno chcesz odmówić wizytę?
+                    </div>
+                    <div class="mt-2">
+                        <form action="/User/Unreserve" method="post">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <div class="row d-flex justify-content-center"></div>
+                            <button class="col btn btn-primary" type="submit" data-bs-dismiss="modal">Tak</button>
+                            <button type="button" class="col btn btn-danger" data-bs-dismiss="modal">Nie</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
