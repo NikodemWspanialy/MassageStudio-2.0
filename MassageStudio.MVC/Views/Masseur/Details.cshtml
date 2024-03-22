@@ -4,10 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
+@Html.Partial("_ReturnPartial", "Szczegóły")
 <div>
-    <h4>MassageDetailsDto</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -16,53 +15,55 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Id)
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TypeName)
+            Masaż
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TypeName)
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
+            Data
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Date)
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SetupDate)
+            Data utworzenia
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SetupDate)
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MasseurName)
+            Masażysta
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MasseurName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MasseurLastName)
-        </dt>
-        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MasseurLastName)
         </dd>
-
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Free)
+            status
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Free)
+            @if(Model.Free == true)
+            {
+                <span class="text-danger d-inline">Wolny</span>
+            }
+            else
+            {
+                <span class="text-success d-inline">Zarezerwowany</span>
+            }
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientName)
+            Klient
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ClientName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientLastName)
-        </dt>
-        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ClientLastName)
         </dd>
 
@@ -71,10 +72,7 @@
 <div>
     @if (Model.Mutable)
     {
-        <a asp-action="Edit" class="btn btn-primary mx-2" asp-route-id="@Model.Id">Edytuj</a>
-        <a asp-action="Delete" class="btn btn-primary mx-2" asp-route-id="@Model.Id">Usuń</a>
+        <a asp-action="Edit" class="btn btn-primary m-2" asp-route-id="@Model.Id">Edytuj</a>
+        <a asp-action="Delete" class="btn btn-danger mx-2" asp-route-id="@Model.Id">Usuń</a>
     }
-</div>
-<div>
-    <a asp-action="Index" class="btn btn-primary mx-2">Back to List</a>
 </div>

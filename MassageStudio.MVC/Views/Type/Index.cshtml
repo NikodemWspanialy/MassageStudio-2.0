@@ -2,24 +2,68 @@
 
 @{
     ViewData["Title"] = "Typy masaży";
-    int rowCounter = 1;
-
-    string GetColor()
-    {
-        rowCounter = rowCounter + 1;
-        return rowCounter % 2 == 0 ? "table-primary" : "table-info";
-    }
 
 }
 
-<div class="h1 mx-auto" style="width: 500px;">Lista dostepnych masaży</div>
+<div class="h1 mx-auto text-center" style="width: 500px;">Lista dostepnych masaży</div>
 @if (ViewData["isEditableTypes"] != null && ViewData["isEditableTypes"].ToString() == "true")
 {
     <p>
-        <a class="btn btn-outline-primary" asp-action="AddType">Create New</a>
+        <a class="btn btn-outline-primary col-6 col-lg-2 m-1" asp-action="AddType">Dodja nowy (page)</a>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary col-6 col-lg-2 m-1" data-bs-toggle="modal" data-bs-target="#myModal">
+            Dodaj nowy (modal)
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center">Dodaj nowy masaż</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                        <div class="h3">
+
+                            Wypełnij formularz
+                        </div>
+                        <div class="mt-2">
+                            <form action="/Type/AddType" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label for="Name" class="form-label">Nazwa masażu</label>
+                                    <input id="Name" name="Name" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Description" class="control-label">Opis masażu</label>
+                                    <input id="Description" name="Description" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Time" class="control-label">Czas trwania</label>
+                                    <input id="Time" name="Time" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Price" class="control-label">Cena</label>
+                                    <input id="Price" name="Price" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </p>
 }
-<table class="table table-hover">
+<table class="table table-striped table-hover">
     <thead>
         <tr class="table table-sm">
             <th scope="col">
@@ -43,7 +87,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class=@GetColor()>
+            <tr class="">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -59,7 +103,7 @@
                 @if (ViewData["isEditableTypes"] != null && ViewData["isEditableTypes"].ToString() == "true")
                 {
 
-                    <td>
+                    <td class="text-center">
                         <a class="btn btn-outline-dark" asp-action="Edit" asp-route-name="@item.Name">edytuj</a>
                         <a class="btn btn-outline-danger" asp-action="Delete" asp-route-name="@item.Name">Usuń</a>
 

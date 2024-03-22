@@ -5,6 +5,7 @@ using MassageStudio.Application.Types.Commands.DeleteType;
 using MassageStudio.Application.Types.Commands.EditType;
 using MassageStudio.Application.Types.Queries.GetAllTypes;
 using MassageStudio.Application.Types.Queries.GetTypeByName;
+using MassageStudio.MVC.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -46,7 +47,9 @@ namespace MassageStudio.MVC.Controllers
             if (ModelState.IsValid)
             {
                 await mediator.Send(addTypeCommand);
+                this.SetNotification("success", $"Dodano masaż {addTypeCommand.Name}!");
                 return RedirectToAction("Index");
+                
             }
             return View(addTypeCommand);
         }

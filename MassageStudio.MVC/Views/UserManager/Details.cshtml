@@ -1,40 +1,40 @@
 ﻿@model MassageStudio.Application.ApplicationUser.Dtos.ApplicationUserDetailsDto
 
-<link rel="stylesheet" href="~/css/fontello/css/fontello.css" />
 @{
     ViewData["Title"] = "Details";
     bool isAdmin = Model.Roles.Contains("Admin");
     bool isMasseur = Model.Roles.Contains("Masseur");
 }
-<div class="h1">
-    <a asp-action="." class="btn btn-outline-dark border-3 border-dark ">
-        <i class="demo-icon icon-left-open"></i>
-    </a>
-    <span>
-        Szczegóły
-    </span>
-</div>
+@Html.Partial("_ReturnPartial", "Szczegóły")
 
 <hr />
 <div class="container-fluid">
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            Imię
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
+            Nazwisko
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </dt>
         <dd class="col-sm-10">
+            <a href="mailto:@Model.PhoneNumber">
             @Html.DisplayFor(model => model.Email)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            Kontakt
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
     </dl>
 </div>

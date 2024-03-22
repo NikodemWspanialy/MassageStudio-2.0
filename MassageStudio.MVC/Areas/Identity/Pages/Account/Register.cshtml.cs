@@ -103,6 +103,8 @@ namespace MassageStudio.MVC.Areas.Identity.Pages.Account
             public string Name { get; set; }
             [Required]
             public string LastName { get; set; }
+            [Required]
+            public string PhoneNumber { get; set; }
         }
 
 
@@ -121,6 +123,7 @@ namespace MassageStudio.MVC.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 user.Name = Input.Name;
                 user.LastName = Input.LastName;
+                user.PhoneNumber = Input.PhoneNumber;
                 var newUserName = Input.Name.Substring(0,3) + Input.LastName.Substring(0,3) + Guid.NewGuid().ToString().Substring(0,4);
                 await _userStore.SetUserNameAsync(user, newUserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
