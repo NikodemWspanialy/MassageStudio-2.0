@@ -149,18 +149,10 @@ namespace MassageStudio.MVC.Controllers
             return RedirectToAction("Details", "Masseur", massageDto.Id);
         }
 
-        // GET: MasseurController/Delete/5
-        [HttpGet]
-        public IActionResult Delete(string id)
-        {
-            ViewData["MassageId"] = id;
-            return View();
-        }
-
         // POST: MasseurController/Delete/
         //[ValidateAntiForgeryToken]
         
-        public async Task<IActionResult> DeleteSubmited(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             try
             {

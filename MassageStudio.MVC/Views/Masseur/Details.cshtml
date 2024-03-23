@@ -73,6 +73,37 @@
     @if (Model.Mutable)
     {
         <a asp-action="Edit" class="btn btn-primary m-2" asp-route-id="@Model.Id">Edytuj</a>
-        <a asp-action="Delete" class="btn btn-danger mx-2" asp-route-id="@Model.Id">Usuń</a>
+
+        <button type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#myModal">
+            Usuń
+        </button>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center">Usuń termin</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                        <div>
+
+                            Czy na pewno chcesz usunąć ten termin, nawet jeżeli jest już zarezerwowany?
+                        </div>
+                        <hr />
+                        <div class="mt-2">
+
+                                 <a asp-action="Delete" class="btn btn-danger mx-2" asp-route-id="@Model.Id">Tak</a>
+                                <button type="button" class="col btn btn-info" data-bs-dismiss="modal">Nie</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     }
 </div>

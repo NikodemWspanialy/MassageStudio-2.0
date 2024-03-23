@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\js\\Masseur\\Create\\dateInitScript.js",
+      "PackagePath": "staticwebassets\\js\\Masseur\\Create\\dateInitScript.js"
+    },
+    {
       "Id": "C:\\PRJs\\ASP.NET_CORE_PRJs\\PRJs\\MassageStudio-2.0\\MassageStudio.MVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
