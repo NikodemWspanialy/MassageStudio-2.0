@@ -13,6 +13,7 @@ using MassageStudio.Domain.Interfaces;
 using MassageStudio.Infrastructure.Repositories;
 using MassageStudio.Infrastructure.Seeders;
 using MassageStudio.Domain.Entities;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace MassageStudio.Infrastructure.Extensions
 {
@@ -31,6 +32,7 @@ namespace MassageStudio.Infrastructure.Extensions
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireDigit = false;
+                options.SignIn.RequireConfirmedAccount = true;
             })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<MassageStudioDbContext>();

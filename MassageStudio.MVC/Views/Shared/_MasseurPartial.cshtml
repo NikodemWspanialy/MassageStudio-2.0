@@ -5,13 +5,13 @@
     @if (await mediator.Send(new UserIsInRolesQuery("Masseur")))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="Index">Terminarz</a>
+            <a class="nav-link text-dark border border-secondary bg-secondary m-1 d-inline" asp-area="" asp-controller="Masseur" asp-action="Index">Terminarz</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="History">Historia</a>
+            <a class="nav-link text-dark border border-secondary bg-secondary m-1" asp-area="" asp-controller="Masseur" asp-action="History">Historia</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark border border-warning mx-1 rounded-pill" asp-area="" asp-controller="Masseur" asp-action="Create">Dodaj termin</a>
+            <a class="nav-link text-dark border border-secondary bg-secondary m-1" asp-area="" asp-controller="Masseur" asp-action="Create">Dodaj termin</a>
         </li>
     }
 }

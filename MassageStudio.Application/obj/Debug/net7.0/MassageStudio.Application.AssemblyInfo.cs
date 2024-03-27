@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f1bce171d2f9c9e6db675a037e1524b08dd3e55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+117cb3607447bcf1645d5df374fb1a6a73e827af")]
 [assembly: System.Reflection.AssemblyProductAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MassageStudio.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
