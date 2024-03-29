@@ -2,6 +2,9 @@ using FluentAssertions.Common;
 using MassageStudio.Infrastructure.Extensions;
 using MassageStudio.Infrastructure.Seeders;
 using MassageStudio.Application.Extensions;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using MassageStudio.Infrastructure.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -57,6 +57,7 @@ namespace MassageStudio.Infrastructure.Seeders
                     LastName = NAME_ADMIN,
                     Email = EMAIL_ADMIN,
                     UserName = NAME_ADMIN,
+                    EmailConfirmed = true,
                 };
                 await userManager.CreateAsync(newUserAdmin, PASSWORD_ADMIN);
                 await userManager.AddToRoleAsync(newUserAdmin, ADMIN_ROLE);
@@ -71,6 +72,8 @@ namespace MassageStudio.Infrastructure.Seeders
                     LastName = NAME_MASSEUR,
                     Email = EMAIL_MASSEUR,
                     UserName = NAME_MASSEUR,
+                    EmailConfirmed = true,
+
                 };
                 var status = await userManager.CreateAsync(newUserAdmin, PASSWORD_MASSEUR);
                 await userManager.AddToRoleAsync(newUserAdmin, MASSEUR_ROLE);
@@ -85,6 +88,8 @@ namespace MassageStudio.Infrastructure.Seeders
                     LastName = NAME_OWNER,
                     Email = EMAIL_OWNER,
                     UserName = NAME_OWNER,
+                    EmailConfirmed = true,
+
                 };
                 await userManager.CreateAsync(newUserAdmin, PASSWORD_OWNER);
                 await userManager.AddToRoleAsync(newUserAdmin, MASSEUR_ROLE);

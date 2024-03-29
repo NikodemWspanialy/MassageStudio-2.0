@@ -33,6 +33,7 @@ namespace MassageStudio.Infrastructure.Extensions
                 options.Password.RequireLowercase = false;
                 options.Password.RequireDigit = false;
                 options.SignIn.RequireConfirmedAccount = true;
+                options.User.RequireUniqueEmail = true;
             })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<MassageStudioDbContext>();
